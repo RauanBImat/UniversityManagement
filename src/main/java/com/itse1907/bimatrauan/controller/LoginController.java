@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-    @RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
+    @RequestMapping(value={"/login"}, method = RequestMethod.GET)
     public ModelAndView login(@RequestParam(value = "e", required = false) Boolean error){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("title", "Log in");

@@ -188,39 +188,7 @@ public class TeacherController {
         }
     }
 
-    @RequestMapping(value = "/susact_user", method = RequestMethod.GET)
-    public String activateAccount(@RequestParam(value = "i") String id, @RequestParam(value = "t") String type, @RequestParam("ac") String action, RedirectAttributes redirectAttributes){
-        User user = User.builder().id(Long.valueOf(id)).build();
-        if (action.equals("0")){
-            user.setActive(0);
-            RequestResponse requestResponse = userService.updateUserStatus(user);
-            if (requestResponse.getResponseCode() == 0){
-                redirectAttributes.addFlashAttribute("success", true);
-                redirectAttributes.addFlashAttribute("message", "<i class=\"fa fa-check-circle\"></i>&nbsp;User account successfully suspended");
-            } else {
-                redirectAttributes.addFlashAttribute("success", false);
-                redirectAttributes.addFlashAttribute("message", requestResponse.getMessage());
-            }
-        } else {
-            user.setActive(1);
-            RequestResponse requestResponse = userService.updateUserStatus(user);
-            if (requestResponse.getResponseCode() == 0){
-                redirectAttributes.addFlashAttribute("success", true);
-                redirectAttributes.addFlashAttribute("message", "<i class=\"fa fa-check-circle\"></i>&nbsp;User account successfully reactivated");
-            } else {
-                redirectAttributes.addFlashAttribute("success", false);
-                redirectAttributes.addFlashAttribute("message", requestResponse.getMessage());
-            }
-        }
-        switch (type) {
-            case "0":
-                return "redirect:/teacher/students";
-            case "1":
-                return "redirect:/teacher/teachers";
-            default:
-                return "redirect:/logout";
-        }
-    }
+
 
     @RequestMapping(value = "/new_student", method = RequestMethod.POST)
     public String newStudent(@RequestParam("fname") String studentFirstName, @RequestParam("lname") String studentLastName, @RequestParam("email") String studentEmail, RedirectAttributes redirectAttributes){

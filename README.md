@@ -12,22 +12,42 @@ The system proposed here incorporates handling and management of multi departmen
 system
 ### UML Diagram project
 ![uml.png](uml.png)
-### Compile project
-1. mvn clean
-2. mvn clean install
-3. Go to the target folder
-4. java -jar student_teacher_crud-0.0.1.war
-5. Open http://localhost:8080/
-### Credentials
+
+
+### I have used technologies such as
+- WebMVC
+- SpringSecurity
+- AspectJ
+- Hibernate
+- PostreSql
+- jms
+- pointcut
+- html,css,js
+
+### Accounts
 - Default Teacher (**email** : teacher@mail.com , **password** : 123456)
 - Default Student (**email** : student@mail.com , **password** : 123456)
 
 ## Screenshots
+
+### JUnit tests
+![Junit.png](Junit.png)
+
 #### Login
-![Login](/screenshots/login.png)
+![login.png](login.png)
+In this screenshot I use WebMVCconfig technology and security configuration.There is also a password that is automatically encrypted
+#### Welcome
+![welcome.png](welcome.png)
+
+When you go to the main page, you can see how many students and teachers are registered
 #### Teacher
-![Teacher Home](/screenshots/teacher_home.jpg)
-![Teacher Teachers](/screenshots/teacher-teachers.png)
-![Teacher Students](/screenshots/teacher-students.png)
+![teachercrud.png](teachercrud.png)
+on this page you can see how many teachers are registered
+
+![teachercrud2.png](teachercrud2.png)
+but on this page you can see how you can add change the teacher's data and also delete it
 #### Student
-![Student Home](/screenshots/student-home.png)
+![studentcrud.ong](studentcrud.png)
+here you can see the list of students and also add, edit, delete
+![studentcrud2.ong](studentcrud2.png)
+and if you go under the student login, you can see a list of subjects and also add

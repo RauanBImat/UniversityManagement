@@ -1,4 +1,4 @@
-package com.itse1907.bimatrauan.restController;
+package com.itse1907.bimatrauan.controller.rest;
 
 
 import com.itse1907.bimatrauan.entity.User;
