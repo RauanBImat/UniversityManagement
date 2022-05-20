@@ -10,16 +10,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value="/api/student")
 public class Student {
 
+    @Autowired
     UserService userService;
 
-
-    @Autowired
     public Student(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping("/profile")
-    public User getUser(int id){
+    @GetMapping("/profile/{id}")
+    public User getUser(@PathVariable int id){
         return userService.getUserById(id);
     }
 
